@@ -1,0 +1,93 @@
+GET http://127.0.0.1:8000/api/v1/products
+
+###
+
+POST http://127.0.0.1:8000/api/v1/products/
+Content-Type: application/json
+
+{
+  "title": "Шляпа",
+  "description": "ковбойская чёрная"
+}
+###
+
+PATCH http://127.0.0.1:8000/api/v1/products/1/
+Content-Type: application/json
+
+{
+  "title": "Хлеб чёрный чёрный"
+}
+###
+
+GET  http://127.0.0.1:8000/api/v1/stocks/58/
+Content-Type: application/json
+###
+
+PATCH http://127.0.0.1:8000/api/v1/stocks/58/
+Content-Type: application/json
+
+{
+  "positions": [
+    {   
+      "product": 5,
+      "quantity": 80,
+      "price": 530
+    },
+    {
+      "product": 4,
+      "quantity": 100,
+      "price": 110
+    }
+  ]
+}
+
+
+###
+
+
+GET http://127.0.0.1:8000/api/v1/stocks/
+Content-Type: application/json
+
+###
+
+POST http://127.0.0.1:8000/api/v1/stocks/
+Content-Type: application/json
+
+{
+  "address": "Питер, Римская улица 44",
+  "positions": [
+    {
+      "product": 3,
+      "quantity": 50,
+      "price": 140
+    },
+    {
+      "product": 4,
+      "quantity": 60,
+      "price": 110
+    }
+  ]
+}
+
+
+###
+
+DELETE http://127.0.0.1:8000/api/v1/stocks/56/
+Content-Type: application/json
+
+###
+
+
+GET http://127.0.0.1:8000/api/v1/stocks/?products=1
+Content-Type: application/json
+
+###
+
+
+DELETE http://127.0.0.1:8000/api/v1/products/1/
+Content-Type: application/json
+
+###
+
+GET http://127.0.0.1:8000/api/v1/products/?search=синие
+Content-Type: application/json
